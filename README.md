@@ -42,3 +42,7 @@ SYNCME is a Django-based system that connects Education apps like (LMS, teams, o
 ![context](https://github.com/user-attachments/assets/9a49c979-a725-4006-9cd0-461fb793ff85)
 ![Level 0](https://github.com/user-attachments/assets/2bc12bf5-4e1a-471f-a2b8-20bbee510a01)
 ![level 1](https://github.com/user-attachments/assets/f127d12b-d46a-4d68-91d7-9a57f557bfdd)
+
+## Demo
+[![Live Demo 1](https://github.com/user-attachments/assets/1edbaad5-b29f-46d4-b312-658823382395)](https://www.youtube.com/watch?v=BKNWgDRtt-c)
+[![Live Demo 2](https://github.com/user-attachments/assets/ffe8aa78-a97b-420e-b964-afe922e5f93e)](https://www.youtube.com/watch?v=BKNWgDRtt-c)
