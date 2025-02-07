@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/signup.css" />
+    <script src="/static/js/validation.js"></script>
+    <link rel="icon" type="image/x-icon" href="/static/images/tabicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="/static/js/fetch.js"></script>
+    <script src="/static/js/redirect.js"></script>
+</head>
+
+<body>
+    <form>
+        <div class="title">Sign Up</div>
+        <div class="name">
+            Name<br>
+            <input type="text" placeholder="e.g. John Smith" id="name" />
+        </div>
+        <div class="email">
+            E-Mail Address<br>
+            <input type="text" placeholder="someone@example.com" id="email" />
+        </div>
+        <div class="name">
+            Password<br>
+            <input type="password" placeholder="Pick a password" id="pass1" />
+        </div>
+        <div class="name">
+            Confirm Password<br>
+            <input type="password" placeholder="Confirm your password" id="pass2" />
+            <div id="errorContainer"></div>
+            <input type="submit" value="Register" placeholder="Password" class="confirm" id="confirmsu" />
+
+            <br><br>
+            <div class="login">
+                <a href="/login">Already have an account? </a>
+            </div>
+            <div id="errorContainer2"></div>
+            <div id="errorContainer3"></div>
+
+        </div>
+
+    </form>
+    <script src="/static/js/validation.js"></script>
+    <script src="/static/js/forms.js"></script>
+</body>
+
+</html>

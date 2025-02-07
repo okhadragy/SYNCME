@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <title>Student List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+        type='text/css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <link rel="stylesheet" href="/static/css/layout.css">
+    <link rel="stylesheet" href="/static/css/stud table style.css">
+    <style>
+        .sidebar ul li a.pressed {
+            pointer-events: none;
+            cursor: not-allowed;
+            background-color: #0e3469;
+            box-shadow: inset 0px 0px 6px 1px #00000053;
+            color: #ffffff;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="/static/images/tabicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="/static/js/fetch.js"></script>
+    <script src="/static/js/redirect.js"></script>
+</head>
+
+<body>
+    <div class="wrapper hover_collapse">
+        <div class="top_navbar">
+            <div class="logo"><img src="/static/images/syncmelogo.png" class="logopic" width=175px /></div>
+        </div>
+        <a href="profilepage.html" class="profilelink">
+            <div class="profile"><img src="/static/images/profile.png" width=30px class="profileicon" /><text
+                    class="profilename"> </text></div>
+        </a>
+        <div class="sidebar">
+            <div class="sidebar_inner">
+                <ul>
+                    <li class="dashboardbox">
+                    <li>
+                        <a href="/" title="Dashboard">
+                            <span class="icon"><i class="fa fa-home fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/messages/create" title="Messages">
+                            <span class="icon"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/students" title="Students" class="pressed">
+                            <span class="iconsp"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/groups" title="Groups">
+                            <span class="icon"><i class="fa fa-users fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="Exit" onclick="redirectToLoginPage()">
+                    <a href="/login" title="Sign Out">
+                        <img src="/static/images/logout-xxl.png" width=40px />
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <h1 class="studtitle">Student List</h1>
+        <div class="full">
+            <section class="wrapper-main">
+
+                <table id="studenttable">
+
+                    <tr>
+                        <th>#</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>GPA</th>
+                        <th>Group</th>
+                        <th>Student Details</th>
+                        <th>Add Student</th>
+                        <th>Delete Student</th>
+                    </tr>
+
+                </table>
+            </section>
+        </div>
+
+    </div>
+    <!-- footer -->
+    <div class="bottomfooter" style="margin-bottom: -10px;">
+        <div class="section1">
+            <p class="teamtitle">Team Members</p>
+            <p class="pfooter">Shehabeldin Ahmed - 23P0201<br>Mohamed Morsi - 23P0097<br>Omar El-Khadragy -
+                23P0085<br>Omar Tamer - 23P0174<br>Omar Abouraya - 23P0100<br>Youssef George - 23P0227 </p>
+        </div>
+        <div class="section2">
+            <div class="innersection2"><img src="/static/images/asu.png" class="asulogo" width=100px /><br>
+                <div class="college">Faculty of Engineering - Ain Shams University<br>
+                    CSE142 - Introduction to Software
+                    Engineering </div>
+            </div>
+        </div>
+        <div class="section3">
+            <img src="/static/images/imghtml.png" width="50px" class="html" />
+            <img src="/static/images/imgcss.png" width="50px" class="css" />
+            <img src="/static/images/imgjs.png" width="50px" class="js" /><Br>
+            <img src="/static/images/imgpython.png" width="50px" class="python" />
+            <img src="/static/images/imgdjango.png" width="50px" class="django" />
+            <Br>
+            <div class="copyright">syncme © 2024</div>
+        </div>
+    </div>
+    <!-- footer -->
+    <script src="/static/js/displaydata.js"></script>
+</body>
+
+</html>

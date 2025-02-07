@@ -1,0 +1,87 @@
+fieldset{
+    border-color: #114084;
+    border-style: solid;
+    border-width: 3px;
+    /* border-radius: 30px; */
+    position: absolute; /* fixed regardless of zoom */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /* to move from abs. center to actual */
+    width: 1050px;
+    height: 650px;
+    overflow: hidden;  /* PREVENT STRETCHING */
+}
+
+legend{
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #114084;
+    font-size: 40px;
+    font-family: helvetica;
+    font-weight: 700;
+    margin: auto;
+}
+
+.vl {
+    border-left: 1px solid #114084;
+    height: 505px;
+    position: absolute;
+    left: 50%;
+    top: 8%;
+  }
+
+.left{
+    width: 500px;
+    margin-top: 40px;
+    margin-bottom: 45px;
+    color: #114084;
+    font-family: helvetica;
+    font-weight: 650;
+    font-size: 35px;
+    text-align: center; /* center content horizontally */
+    display: flex; /* to use justify */
+    justify-content: center; /* center div horizontally */
+    align-items: center; /* center div vertically */
+}
+
+.name, .email, .pass, .confpass{
+    font-family: helvetica;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-left: 50px;
+}
+
+input[type=text], input[type=password] {
+    background-color: #F9F9F9;
+    font-size: 15px;
+    font-family: 'helvetica';
+    margin-top: 5px;
+    width: 425px;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    border-bottom: 3px solid #114084;
+  }
+
+  input[type=text]:focus, input[type=password]:focus {
+    outline: none;
+    border-bottom: 3px solid #2476e8;
+  }
+
+.right{
+    margin-left: 525px;
+    margin-top: -507px; /* Was displaced below the left div*/
+    width: 525px;
+    color: #114084;
+    font-family: helvetica;
+    font-weight: 650;
+    font-size: 35px;
+    text-align: center; /* Center the content horizontally */
+    display: flex;
+    justify-content: center; /* Center the div itself horizontally */
+    align-items: center; /* Center the div itself vertically */
+}

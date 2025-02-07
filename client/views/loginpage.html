@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <title>syncme</title>
+    <link rel="stylesheet" href="/static/css/loginpage.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="/static/images/tabicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="/static/js/fetch.js"></script>
+    <script src="/static/js/redirect.js"></script>
+</head>
+
+<body>
+
+    <div class="content">
+        <div style="text-align: center;">
+            <img src="/static/images/syncmelogo.png" id="logo">
+
+        </div>
+        <div style="text-align: center;">
+            <form>
+                <input type="text" placeholder="Username" id="emailin" /><br>
+                <div class="passwordcontainer">
+                    <input type="password" placeholder="Password" id="passwordin" />
+                    <img src="/static/images/passeye.png" class="passwordtoggle" id="toggleButton"
+                        onmouseover="eyecolor(event)" onmouseout="resetEyeColor(event)"
+                        onclick="togglePasswordVisibility(event)">
+
+                </div>
+                <br>
+                <input type="submit" value="Log in" id="confirm" class="logbut" />
+            </form>
+            <div id="errorContainer"></div>
+            <div id="errorContainer2"></div>
+
+            <footer>Don't have an account? <a href="/signup" class="aup">Sign up instead!</a></footer>
+        </div>
+    </div>
+    <script src="/static/js/validation.js"></script>
+    <script src="/static/js/forms.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,354 @@
+<html>
+
+<head>
+    <title>Create Message</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+        type='text/css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/Mf.css">
+    <link rel="stylesheet" href="/static/css/layout.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@404&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/images/tabicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="/static/js/fetch.js"></script>
+    <script src="/static/js/redirect.js"></script>
+
+</head>
+
+<body id="content">
+    <div class="wrapper hover_collapse">
+        <div class="top_navbar">
+            <div class="logo"><img src="/static/images/syncmelogo.png" class="logopic" width=175px /></div>
+        </div>
+        <a href="profilepage.html" class="profilelink">
+            <div class="profile"><img src="/static/images/profile.png" width=30px class="profileicon" /><text
+                    class="profilename">Naglaa Fathy</text></div>
+        </a>
+        <div class="sidebar">
+            <div class="sidebar_inner">
+                <ul>
+                    <li class="dashboardbox">
+                    <li>
+                        <a href="/" title="Dashboard">
+                            <span class="icon"><i class="fa fa-home fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/messages/create" title="Messages" class="pressed">
+                            <span class="icon"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/students" title="Students">
+                            <span class="iconsp"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/groups" title="Groups">
+                            <span class="icon"><i class="fa fa-users fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="Exit" onclick="redirectToLoginPage()">
+                    <a href="/login" title="Sign Out">
+                        <img src="/static/images/logout-xxl.png" width=40px />
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1 style="text-align: left; margin-bottom: 50px; font-size: 32px">Message Form</h1>
+
+        <script src="/static/ckeditor/ckeditor.js">
+
+        </script>
+
+        <div class="Frame">
+
+            <h1 style="font-family: Outfit;">Draft Messages<br></h1>
+            <h2 style="font-family: Outfit;">Title:</h2>
+            <form class="form">
+                <div class="fields">
+
+                    <textarea id="area" rows="1" cols="30">
+                            </textarea>
+                </div>
+
+                <h2 style="font-family: Outfit; margin-top: 10px;">Body:</h2>
+                <form class="form">
+                    <div class="fields">
+
+                        <textarea id="area2" rows="3" cols="30">
+                            </textarea>
+
+                        <script>
+
+                            CKEDITOR.replace("area2", { uploadcare: { publicKey: 'ee5f5bae73dd1bdc0c5d' } });
+                            CKEDITOR.config.width = "100%";
+                            CKEDITOR.config.height = "250px";
+                        </script>
+                </form>
+        </div>
+
+        <div class="container">
+
+            <button id="save-button">Save</button>
+            <button id="test">Save and Send</button>
+
+            <a href="/messages"><button id="check-editing">Check Drafts</button></a>
+
+        </div>
+
+    </div>
+
+    <style>
+        /* The pop (background) */
+        .pop {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* pop Content */
+        .pop-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .pop-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .pop-body {
+            padding: 2px 16px;
+        }
+
+        .pop-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+    </style>
+    </head>
+
+    <body>
+
+
+
+        <!-- The pop -->
+        <div id="mypop" class="pop">
+
+            <!-- pop content -->
+            <div class="pop-content">
+                <div class="pop-header">
+                    <span class="close">&times;</span>
+                    <h2>Send Message</h2>
+                </div>
+                <div class="pop-body">
+                    <form class="form">
+                        <div class="fields">
+                            <label for="platform"> Platform: </label>
+                            <select id="platform">
+                                <option>
+                                    LMS
+                                </option>
+                                <option>
+                                    Teams
+                                </option>
+
+                            </select>
+                        </div>
+                        <div class="fields">
+                            <script type="text/javascript">
+                                function showSelect() {
+                                    var select = document.getElementById('selection');
+                                    var selectL = document.getElementById('selectionL');
+                                    var selectB = document.getElementById('selectionB');
+                                    select.className = 'show';
+                                    selectL.className = 'show';
+                                    selectB.className = "show";
+
+                                }
+                                function hideSelect() {
+                                    var select = document.getElementById('selection');
+                                    var selectL = document.getElementById('selectionL');
+                                    var selectB = document.getElementById('selectionB');
+
+                                    select.className = 'hide';
+                                    selectL.className = 'hide';
+                                    selectB.className = "show";
+                                }
+                            </script>
+                            <div class="flex-row" style='display:flex; flex-direction:row;'>
+                                <label for="my_radio">Send To all: </label>
+                                <input id="my_radio" type="radio" name="options" value="v" onclick="hideSelect();" />
+                            </div>
+                            <div class="flex-row">
+                                <label for="my_radio">Select students/groups: </label>
+                                <input id="my_radio" type="radio" name="options" value="v" onclick="showSelect();" />
+                            </div>
+
+
+
+                            <label for="selectionL" id="selectionL" class="hide">Enter ID: </label>
+                            <textarea id="selection" class="hide"></textarea>
+
+
+                        </div>
+
+
+
+                        <div id="Container">
+
+                            <button type="submit" id="selectionB" class="hide">Send</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+            // Get the pop
+            var pop = document.getElementById("mypop");
+
+            // Get the button that opens the pop
+            var btn = document.getElementById("test");
+
+            // Get the <span> element that closes the pop
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the pop 
+            btn.onclick = function () {
+                pop.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the pop
+            span.onclick = function () {
+                pop.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the pop, close it
+            window.onclick = function (event) {
+                if (event.target == pop) {
+                    pop.style.display = "none";
+                }
+            }
+        </script>
+
+        </div>
+
+        </div>
+        </div>
+        <!-- footer -->
+        <div class="bottomfooter">
+            <div class="section1">
+                <p class="teamtitle">Team Members</p>
+                <p class="pfooter">Shehabeldin Ahmed - 23P0201<br>Mohamed Morsi - 23P0097<br>Omar El-Khadragy -
+                    23P0085<br>Omar Tamer - 23P0174<br>Omar Abouraya - 23P0100<br>Youssef George - 23P0227 </p>
+            </div>
+            <div class="section2">
+                <div class="innersection2"><img src="/static/images/asu.png" class="asulogo" width=100px /><br>
+                    <div class="college">Faculty of Engineering - Ain Shams University<br>
+                        CSE142 - Introduction to Software
+                        Engineering </div>
+                </div>
+            </div>
+            <div class="section3">
+                <img src="/static/images/imghtml.png" width="50px" class="html" />
+                <img src="/static/images/imgcss.png" width="50px" class="css" />
+                <img src="/static/images/imgjs.png" width="50px" class="js" /><Br>
+                <img src="/static/images/imgpython.png" width="50px" class="python" />
+                <img src="/static/images/imgdjango.png" width="50px" class="django" />
+                <Br>
+                <div class="copyright">syncme © 2024</div>
+            </div>
+        </div>
+        <!-- footer -->
+
+    </body>
+    <script src="/static/js/validation.js"></script>
+    <script src="/static/js/forms.js"></script>
+    <script src="/static/js/displaydata.js"></script>
+
+</html>

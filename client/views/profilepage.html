@@ -1,0 +1,139 @@
+<html>
+
+<head>
+    <title>Profile Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+        type='text/css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <link rel="stylesheet" href="/static/css/profilepage.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/tabicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="/static/js/fetch.js"></script>
+    <script src="/static/js/redirect.js"></script>
+</head>
+
+<body>
+    <div class="wrapper hover_collapse">
+        <div class="top_navbar">
+            <div class="logo"><img src="/static/images/syncmelogo.png" class="logopic" width=175px /></div>
+        </div>
+        <div class="profile"><img src="/static/images/profile.png" width=30px class="profileicon" /><span
+                class="profilename">Naglaa Fathy</span></div>
+        <div class="sidebar">
+            <div class="sidebar_inner">
+                <ul>
+                    <li>
+                        <a href="dashboard.html" title="Dashboard">
+                            <span class="icon"><i class="fa fa-home fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="messageForm.html" title="Messages">
+                            <span class="icon"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="students.html" title="Students">
+                            <span class="iconsp"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="groups.html" title="Groups">
+                            <span class="icon"><i class="fa fa-users fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="Exit" onclick="redirectToLoginPage()">
+                    <a href="loginpage.html" title="Sign Out">
+                        <img src="/static/images/logout-xxl.png" width=40px />
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <h1>Profile Page</h1>
+
+
+
+        <div class="boxes-container">
+            <div class="leftbox">
+                <div class="leftboxcontent">
+                    <div class="profile-pic">
+                        <label class="-label" for="file">
+
+                            <img src="/static/images/profile.png" id="output" width="200" /><br>
+                            <span class="glyphicon glyphicon-camera"></span>
+                            <span>Change Image</span><br>
+                        </label>
+                        <input id="file" type="file" onchange="loadFile(event)" />
+                    </div>
+                    <form action="/submit-profile" method="post">
+                        <div class="profile-form">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" value="Naglaa Fathy"><br><br>
+
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender">
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select><br><br>
+                        </div>
+                        <textarea id="bio" name="bio" rows="4" cols="29"
+                            placeholder="Write something about yourself..."></textarea><br><br>
+                        <input type="Submit" value="Save" />
+                </div>
+            </div>
+
+            <div class="rightbox">
+                <div class="moodle"><img src="/static/images/imgmoodle.png" width=50px>
+                    <div class="smtitle">Moodle</div>
+                    <input type="button" value="Link" />
+                </div>
+                <div class="msteams"><img src="/static/images/imgmsteams.png" width=50px>
+                    <div class="smtitle">Microsoft Teams</div>
+                    <input type="button" value="Unlink" />
+                </div>
+                <div class="rightboxcontent">
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <!-- footer -->
+    <div class="bottomfooter">
+        <div class="section1">
+            <p class="teamtitle">Team Members</p>
+            <p class="pfooter">Shehabeldin Ahmed - 23P0201<br>Mohamed Morsi - 23P0097<br>Omar El-Khadragy -
+                23P0085<br>Omar Tamer - 23P0174<br>Omar Abouraya - 23P0100<br>Youssef George - 23P0227 </p>
+        </div>
+        <div class="section2">
+            <div class="innersection2"><img src="/static/images/asu.png" class="asulogo" width=100px /><br>
+                <div class="college">Faculty of Engineering - Ain Shams University<br>
+                    CSE142 - Introduction to Software
+                    Engineering </div>
+            </div>
+        </div>
+        <div class="section3">
+            <img src="/static/images/imghtml.png" width="50px" class="html" />
+            <img src="/static/images/imgcss.png" width="50px" class="css" />
+            <img src="/static/images/imgjs.png" width="50px" class="js" /><Br>
+            <img src="/static/images/imgpython.png" width="50px" class="python" />
+            <img src="/static/images/imgdjango.png" width="50px" class="django" />
+            <Br>
+            <div class="copyright">syncme © 2024</div>
+        </div>
+    </div>
+    <!-- footer -->
+</body>
+
+</html>
