@@ -8,6 +8,7 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Message(models.Model):
+   #sender = models.ForeignKey(User, verbose_name=_("user"),on_delete=models.CASCADE)
     title = models.CharField(_("title"), max_length=50)
     content = RichTextField(_("content"))
     students = models.ManyToManyField("Student",verbose_name=_("students"), blank=True)
@@ -25,6 +26,7 @@ class Message(models.Model):
         return self.title
 
 class Student(models.Model):
+   #coordinator = models.ManyToMany(User, verbose_name=_("user"),on_delete=models.CASCADE)
     name = models.CharField(_("name"), max_length=50)
     slug = models.SlugField(_("slug"),blank=True,null=True)
     grade = models.FloatField(_("grade"),blank=True,null=True)
@@ -47,6 +49,7 @@ class Student(models.Model):
 
     
 class Group(models.Model):
+    #coordinator = models.ManyToMany(User, verbose_name=_("user"),on_delete=models.CASCADE)
     title = models.CharField(_("title"), max_length=50)
     description = models.TextField(_("description"),blank=True,null=True)
     students = models.ManyToManyField(Student,verbose_name=_("Students"))
